@@ -164,11 +164,7 @@ management_group_settings = {
       }
     }
     connectivity = {
-      policy_assignments = {
-        Enable-DDoS-VNET = {
-          enforcement_mode = "DoNotEnforce"
-        }
-      }
+      policy_assignments = {}
     }
     landingzones = {
       policy_assignments = {
