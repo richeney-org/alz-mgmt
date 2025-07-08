@@ -22,7 +22,7 @@ on:
 
 jobs:
   plan_and_apply:
-    uses: richeney-org/alz-mgmt-templates/.github/workflows/cd-template.yaml@main
+    uses: richeney-org/alz-mgmt/.github/workflows/cd-template.yaml@main
     name: 'CD'
     permissions:
       id-token: write

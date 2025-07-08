@@ -14,7 +14,7 @@ on:
 
 jobs:
   validate_and_plan:
-    uses: richeney-org/alz-mgmt-templates/.github/workflows/ci-template.yaml@main
+    uses: richeney-org/alz-mgmt/.github/workflows/ci-template.yaml@main
     name: 'CI'
     permissions:
       id-token: write
