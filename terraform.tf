@@ -26,9 +26,6 @@ provider "alz" {
   library_references = [
     {
       custom_url = "${path.root}/lib"
-    },
-    {
-      custom_url = "github.com/richeney-org/alz-custom-library"
     }
   ]
 }
