@@ -28,7 +28,7 @@ provider "alz" {
       custom_url = "${path.root}/lib"
     },
     {
-      custom_url = "git::https://github.com/richeney-org/citadel-custom-lib?ref=v0.1"
+      custom_url = "git::https://github.com/richeney-org/citadel-custom-lib?ref=v0.2"
     }
   ]
 }
