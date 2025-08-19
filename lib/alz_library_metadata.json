@@ -5,7 +5,7 @@
   "description": "This library allows overriding policies, archetypes, and management group architecture in the ALZ Accelerator.",
   "dependencies": [
     {
-      "custom_url": "git::https://github.com/richeney-org/citadel-custom-lib?ref=v0.1"
+      "custom_url": "git::https://github.com/richeney-org/citadel-custom-lib?ref=v0.2"
     }
   ]
 }
