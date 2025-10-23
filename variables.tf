@@ -12,3 +12,15 @@ variable "subscription_ids" {
     error_message = "The keys of the subscription_ids map must be one of 'management', 'connectivity', 'identity' or 'security'"
   }
 }
+
+variable "location" {
+  type        = string
+  default     = "uksouth"
+  description = "Location for the resources"
+}
+
+variable "email_security_contact" {
+  type        = string
+  default     = ""
+  description = "Email address for security alerts"
+}
