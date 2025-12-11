@@ -52,7 +52,7 @@ module "management_groups" {
   source  = "Azure/avm-ptn-alz/azurerm"
   version = "0.14.0"
 
-  architecture_name  = "alz"
+  architecture_name  = "alz_custom"
   location           = var.location
   parent_resource_id = data.azapi_client_config.current.tenant_id # Tenant root group
   #   retries            = local.default_retries
