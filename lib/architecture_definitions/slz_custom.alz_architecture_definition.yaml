@@ -1,4 +1,4 @@
-name: slz_custom
+name: alz_custom
 management_groups:
   - id: alz
     display_name: Sovereign Landing Zone
