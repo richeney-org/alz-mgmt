@@ -28,7 +28,7 @@ provider "alz" {
       custom_url = "${path.root}/lib"
     }
   ]
-  # suppress_warning_policy_role_assignments = true
+  suppress_warning_policy_role_assignments = true
 }
 
 provider "azapi" {
