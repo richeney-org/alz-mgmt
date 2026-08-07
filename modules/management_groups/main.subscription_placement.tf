@@ -1,5 +1,5 @@
 resource "azapi_resource" "subscription_placement" {
-  for_each = local.subscription_placement_destroy_behavior_default_enabled ? var.subscription_placement : {}
+  for_each = local.subscription_placement_destroy_behavior_default_enabled ? { for k, v in var.subscription_placement : k => v if v.subscription_id != null && v.subscription_id != "" } : {}
 
   name                   = each.value.subscription_id
   parent_id              = "/providers/Microsoft.Management/managementGroups/${each.value.management_group_name}"
@@ -29,7 +29,7 @@ resource "azapi_resource" "subscription_placement" {
 }
 
 resource "azapi_resource_action" "subscription_placement_create" {
-  for_each = local.subscription_placement_destroy_behavior_default_enabled ? {} : var.subscription_placement
+  for_each = local.subscription_placement_destroy_behavior_default_enabled ? {} : { for k, v in var.subscription_placement : k => v if v.subscription_id != null && v.subscription_id != "" }
 
   method                 = "PUT"
   resource_id            = "/providers/Microsoft.Management/managementGroups/${each.value.management_group_name}/subscriptions/${each.value.subscription_id}"
@@ -57,7 +57,7 @@ resource "azapi_resource_action" "subscription_placement_create" {
 }
 
 resource "azapi_resource_action" "subscription_placement_delete" {
-  for_each = local.subscription_placement_destroy_behavior_default_enabled ? {} : var.subscription_placement
+  for_each = local.subscription_placement_destroy_behavior_default_enabled ? {} : { for k, v in var.subscription_placement : k => v if v.subscription_id != null && v.subscription_id != "" }
 
   method                 = "PUT"
   resource_id            = "/providers/Microsoft.Management/managementGroups/${local.subscription_placement_destroy_management_group_id}/subscriptions/${each.value.subscription_id}"
