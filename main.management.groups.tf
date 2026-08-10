@@ -1,7 +1,8 @@
 module "management_groups" {
-  source  = "Azure/avm-ptn-alz/azurerm"
-  version = "0.21.0"
-  count   = var.management_groups_enabled ? 1 : 0
+  # source  = "Azure/avm-ptn-alz/azurerm"
+  # version = "0.21.0"
+  source = "./modules/management_groups"
+  count  = var.management_groups_enabled ? 1 : 0
 
   architecture_name                                                = module.config.outputs.management_group_settings.architecture_name
   parent_resource_id                                               = module.config.outputs.management_group_settings.parent_resource_id
