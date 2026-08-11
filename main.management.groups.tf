@@ -1,8 +1,8 @@
 module "management_groups" {
-  # source  = "Azure/avm-ptn-alz/azurerm"
-  # version = "0.21.0"
-  source = "./modules/management_groups"
-  count  = var.management_groups_enabled ? 1 : 0
+  source  = "Azure/avm-ptn-alz/azurerm"
+  version = "0.21.0"
+  count   = var.management_groups_enabled ? 1 : 0
+  # source = "./modules/management_groups"
 
   architecture_name                                                = module.config.outputs.management_group_settings.architecture_name
   parent_resource_id                                               = module.config.outputs.management_group_settings.parent_resource_id
@@ -12,7 +12,7 @@ module "management_groups" {
   enable_telemetry                                                 = var.enable_telemetry
   management_group_hierarchy_settings                              = module.config.outputs.management_group_settings.management_group_hierarchy_settings
   retries                                                          = module.config.outputs.management_group_settings.retries
-  subscription_placement                                           = module.config.outputs.management_group_settings.subscription_placement
+  subscription_placement                                           = local.subscription_placement_filtered
   timeouts                                                         = module.config.outputs.management_group_settings.timeouts
   override_policy_definition_parameter_assign_permissions_set      = module.config.outputs.management_group_settings.override_policy_definition_parameter_assign_permissions_set
   override_policy_definition_parameter_assign_permissions_unset    = module.config.outputs.management_group_settings.override_policy_definition_parameter_assign_permissions_unset
