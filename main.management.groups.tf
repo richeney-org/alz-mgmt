@@ -12,7 +12,7 @@ module "management_groups" {
   enable_telemetry                                                 = var.enable_telemetry
   management_group_hierarchy_settings                              = module.config.outputs.management_group_settings.management_group_hierarchy_settings
   retries                                                          = module.config.outputs.management_group_settings.retries
-  subscription_placement                                           = local.subscription_placement_filtered
+  subscription_placement                                           = module.config.outputs.management_group_settings.subscription_placement
   timeouts                                                         = module.config.outputs.management_group_settings.timeouts
   override_policy_definition_parameter_assign_permissions_set      = module.config.outputs.management_group_settings.override_policy_definition_parameter_assign_permissions_set
   override_policy_definition_parameter_assign_permissions_unset    = module.config.outputs.management_group_settings.override_policy_definition_parameter_assign_permissions_unset
